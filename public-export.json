@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "repository": "availkit/status",
+  "sourceRoot": "ops/public-status",
+  "files": [
+    ".github/ISSUE_TEMPLATE/incident.yml",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "data/alerts.json",
+    "data/state.json",
+    "public-export.json",
+    "scripts/github.mjs",
+    "scripts/monitor.mjs",
+    "scripts/render.mjs",
+    "scripts/run.mjs",
+    "site/fonts/manrope-variable.ttf",
+    "site/index.template.html",
+    "site/licenses/Manrope-OFL.txt",
+    "site/status.css",
+    "site/status.js",
+    "site/theme.js",
+    "test/monitor.test.mjs"
+  ],
+  "excluded": [
+    "private application history and source",
+    "SDK and account data",
+    "credentials and private evidence",
+    "_site generated output"
+  ],
+  "purpose": "Independent fixed public GET monitor, bounded observations, issue transitions and informational static status only",
+  "publication": {
+    "stage": "source-only",
+    "actions": "must-remain-disabled",
+    "workflowIncluded": false
+  },
+  "withheld": [
+    {
+      "path": ".github/workflows/observe.yml",
+      "sha256": "ee8eb188361448b24c49ce8fedabe13699be9454c531963e93a3ecc84036f1cd",
+      "reason": "Owner workflow-file write authority required before inclusion and separate activation"
+    }
+  ]
+}

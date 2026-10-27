@@ -1,0 +1,33 @@
+name: Service incident
+description: Record verified impact and operational follow-ups
+title: 'Incident: '
+body:
+  - type: markdown
+    attributes:
+      value: Record known facts. Label any hypothesis or drill. Do not include customer data, credentials, response bodies, IPs or private booking links.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Current impact and state
+      description: Affected public component, verified impact, and what remains unknown.
+    validations:
+      required: true
+  - type: textarea
+    id: detection
+    attributes:
+      label: Detection and evidence
+      description: UTC detection time, public observation/run links and confirmed scope. Distinguish alert time from service onset.
+    validations:
+      required: true
+  - type: textarea
+    id: timeline
+    attributes:
+      label: UTC timeline and updates
+      description: Append dated known facts, actions and recovery evidence. Do not invent an onset or resolution time.
+    validations:
+      required: true
+  - type: textarea
+    id: followups
+    attributes:
+      label: Follow-ups and remaining limits
+      description: Owner, next action and evidence of completion. Record data-loss uncertainty or host-loss limits where relevant.

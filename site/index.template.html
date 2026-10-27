@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#101724">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Actual external observations of AvailKit public endpoints, coverage gaps and incident updates.">
+  <link rel="canonical" href="https://availkit.github.io/status/">
+  <script src="./theme.js"></script>
+  <link rel="stylesheet" href="./status.css">
+  <script src="./status.js" defer></script>
+  <title>Status · AvailKit</title>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to status</a>
+  <header class="header"><a class="brand" href="https://availkit.com/" aria-label="AvailKit home">AvailKit</a>
+    <nav aria-label="Public navigation"><a href="https://availkit.dev/">Developers</a><a href="https://github.com/availkit/status/issues?q=is%3Aissue+is%3Aopen+-label%3Amonitor-drill">Incidents</a><a href="./" aria-current="page">Status</a></nav>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch to light mode" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path></svg></button>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1>Service status</h1>
+    <p class="lead">External checks of AvailKit’s public endpoints, published independently of the application server.</p>
+    <!--OBSERVATION-->
+    <div class="table-scroll" role="region" aria-label="Last observation by component" tabindex="0"><table><caption>Last observed public checks</caption><thead><tr><th scope="col">Component</th><th scope="col">Last result</th><th scope="col">What was checked</th></tr></thead><tbody><!--COMPONENTS--></tbody></table></div>
+    <section aria-labelledby="coverage"><h2 id="coverage">Observed coverage</h2><!--COVERAGE--><p>The schedule requests a check every five minutes. GitHub may delay or drop runs; this monitor and status publishing share GitHub as a dependency. A passing public check does not exercise account access, mutations, email delivery or customer bookings.</p></section>
+    <section aria-labelledby="incidents"><h2 id="incidents">Incidents and updates</h2><p><a href="https://github.com/availkit/status/issues?q=is%3Aissue+is%3Aopen+-label%3Amonitor-drill">Open incident threads</a> · <a href="https://github.com/availkit/status/issues?q=is%3Aissue+is%3Aclosed+-label%3Amonitor-drill">Closed incident threads</a></p><p>Two consecutive checks that cannot confirm an endpoint open or reopen its monitor thread. A passing check closes it. An operator records verified impact, investigation and follow-ups there. <a href="https://github.com/availkit/status/issues?q=label%3Amonitor-drill">Controlled alert drills</a> are separate from incident and observation history.</p></section>
+    <section aria-labelledby="limits"><h2 id="limits">What this tells you</h2><p>Observations begin when this monitor records its first check. Missing or stale observations mean unknown availability. This finite public history is not a contractual uptime commitment, independent certification or guarantee of support response time. <a href="https://availkit.dev/service">Read the preview terms and operational limits</a>.</p></section>
+  </main>
+  <footer><a href="./data/status.json">Latest observations as JSON</a><span> · </span><a href="https://github.com/availkit/status/actions/workflows/observe.yml">Monitor runs</a><span> · </span><a href="https://github.com/availkit/status">Monitor source and process</a></footer>
+  <script id="status-data" type="application/json"><!--DATA--></script>
+</body>
+</html>
